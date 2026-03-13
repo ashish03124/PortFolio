@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashish Garud | Hashira Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            demon: {
+              black: '#0a0a0a',
+              charcoal: '#1a1a1a',
+              red: '#b91c1c',
+              flame: '#ef4444',
+              olive: '#3f6212',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-morphism {
+      background: white;
+      border: 3px solid black;
+      box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+      transition: all 0.3s ease;
+    }
+
+    .dark .glass-morphism {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+      backdrop-filter: blur(10px);
+    }
+
+    .breathing-bg {
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    }
+
+    .dark .breathing-bg {
+      background: radial-gradient(circle, rgba(185, 28, 28, 0.15) 0%, rgba(10, 10, 10, 1) 70%);
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-demon-black text-black dark:text-white transition-colors duration-300">
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
