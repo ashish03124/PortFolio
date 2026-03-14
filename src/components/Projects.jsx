@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Flame } from 'lucide-react';
+import { Github, Flame } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -131,10 +131,6 @@ const Projects = () => {
                   <a href={project.github} className="flex items-center space-x-2 text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white transition-colors text-sm font-black">
                     <Github className="w-4 h-4" />
                     <span>Source</span>
-                  </a>
-                  <a href={project.demo} className="flex items-center space-x-2 text-black hover:text-gray-500 dark:text-demon-red dark:hover:text-demon-flame transition-colors text-sm font-black">
-                    <ExternalLink className="w-4 h-4" />
-                    <span>Live Demo</span>
                   </a>
                 </div>
               </div>
