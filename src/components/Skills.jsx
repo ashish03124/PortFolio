@@ -100,7 +100,18 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-24 relative bg-white dark:bg-demon-charcoal transition-colors duration-300">
+    <section id="skills" className="py-24 relative bg-white dark:bg-demon-charcoal transition-colors duration-300 overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vh] min-h-[100vw] object-cover opacity-[0.15] dark:opacity-[0.2] pointer-events-none shadow-inner -rotate-90"
+      >
+        <source src="/photos/j2.mp4" type="video/mp4" />
+      </video>
+
       {/* Decorative Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-white dark:from-demon-black via-transparent to-white dark:to-demon-black opacity-60 pointer-events-none"></div>
 
@@ -112,7 +123,7 @@ const Skills = () => {
             viewport={{ once: true }}
             className="h-1 w-24 bg-black dark:bg-demon-red mb-4"
           />
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -120,7 +131,7 @@ const Skills = () => {
           >
             Techniques
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

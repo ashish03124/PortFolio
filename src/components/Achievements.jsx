@@ -59,7 +59,7 @@ const Achievements = () => {
       ></motion.div>
 
       {/* Subtle Background Video */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] dark:opacity-[0.05]">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] dark:opacity-[0.1]">
         <video
           src="/photos/z.mp4"
           autoPlay

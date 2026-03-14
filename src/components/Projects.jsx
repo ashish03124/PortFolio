@@ -72,7 +72,7 @@ const Projects = () => {
             viewport={{ once: true }}
             className="h-1 w-24 bg-black dark:bg-demon-red mb-4"
           />
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -80,7 +80,7 @@ const Projects = () => {
           >
             Missions
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -103,13 +103,13 @@ const Projects = () => {
             >
               {/* Image Container */}
               <div className="relative h-64 overflow-hidden border-b-2 border-black dark:border-none">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale dark:grayscale-0 group-hover:grayscale-0"
                 />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-demon-black via-transparent to-transparent opacity-100 dark:opacity-80"></div>
-                
+                <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-demon-black via-transparent to-transparent opacity-100 dark:opacity-80"></div>
+
                 {/* Overlay Icon */}
                 <div className="absolute top-4 right-4 bg-white dark:bg-demon-black/80 backdrop-blur-md p-2 rounded-none md:rounded-full border-2 border-black dark:border-white/10 opacity-0 group-hover:opacity-100 transition-opacity shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-none">
                   <Flame className="w-5 h-5 text-black dark:text-demon-red" />
@@ -123,10 +123,10 @@ const Projects = () => {
                     <span key={i} className="px-3 py-1 bg-white dark:bg-demon-red/10 text-black dark:text-demon-red rounded-none md:rounded-full text-[10px] font-black uppercase tracking-wider border border-black dark:border-demon-red/20 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-none">{t}</span>
                   ))}
                 </div>
-                
+
                 <h3 className="text-2xl font-black text-black dark:text-white mb-3 group-hover:text-gray-500 dark:group-hover:text-demon-red transition-colors">{project.title}</h3>
                 <p className="text-gray-800 dark:text-gray-400 font-bold text-sm leading-relaxed mb-6 italic">"{project.description}"</p>
-                
+
                 <div className="flex items-center space-x-6">
                   <a href={project.github} className="flex items-center space-x-2 text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white transition-colors text-sm font-black">
                     <Github className="w-4 h-4" />
@@ -138,7 +138,7 @@ const Projects = () => {
                   </a>
                 </div>
               </div>
-              
+
               {/* Bottom Line Glow */}
               <div className="absolute bottom-0 left-0 w-0 h-1 bg-black dark:bg-demon-red duration-500 transition-all group-hover:w-full dark:shadow-[0_0_15px_rgba(185,28,28,0.8)]"></div>
             </motion.div>

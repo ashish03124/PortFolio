@@ -4,7 +4,7 @@ import { Download } from 'lucide-react';
 
 const Resume = () => {
   return (
-    <section id="resume" className="py-24 bg-white dark:bg-demon-charcoal transition-colors duration-300 relative">
+    <section id="resume" className="py-24 bg-gray-50 dark:bg-demon-black transition-colors duration-300 relative">
       <div className="container mx-auto px-4 z-10 relative">
         <div className="flex flex-col items-center mb-16">
           <motion.div

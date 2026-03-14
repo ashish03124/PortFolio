@@ -62,7 +62,17 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-demon-black transition-colors duration-300 relative">
+    <section id="contact" className="py-24 bg-white dark:bg-demon-black transition-colors duration-300 relative overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.15] dark:opacity-[0.08] pointer-events-none"
+      >
+        <source src="/photos/j5.mp4" type="video/mp4" />
+      </video>
       <div className="container mx-auto px-4 z-10 relative">
         <div className="flex flex-col items-center mb-16">
           <motion.div
@@ -194,7 +204,7 @@ const Contact = () => {
               )}
               {submitStatus === "error" && (
                 <div className="p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-400 border border-red-300 dark:border-red-800 rounded-lg text-center font-bold">
-                  Failed to send message. Please ensure your Access Key is set.
+                  Failed to send message. If this is your first time, please check your inbox (including spam) for an activation email from FormSubmit.
                 </div>
               )}
             </form>

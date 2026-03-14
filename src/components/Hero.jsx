@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Mail, FileText, Flame } from 'lucide-react';
 
 const Hero = () => {
   const containerRef = useRef(null);
+  const [isHeroHovered, setIsHeroHovered] = useState(false);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -14,11 +15,33 @@ const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section id="home" ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section
+      id="home"
+      ref={containerRef}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+    >
       {/* Dynamic Background with Parallax */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-white dark:bg-demon-black"></div>
         <div className="absolute inset-0 breathing-bg opacity-30 dark:opacity-100"></div>
+
+        {/* lightning.gif Background Triggered on Section Hover */}
+        <AnimatePresence>
+          {isHeroHovered && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.6 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 z-0 pointer-events-none"
+            >
+              <img
+                src="/photos/lightning1.gif"
+                alt="Section Lightning"
+                className="w-full h-full object-cover mix-blend-screen brightness-150"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Parallax Embers/Atmosphere */}
         <motion.div
@@ -46,7 +69,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-extrabold text-black dark:text-white mb-6 tracking-tight leading-tight">
             I'm <span className="text-black dark:text-demon-red uppercase italic font-black">Ashish Garud</span>
             <br />
-            <span className="text-3xl md:text-4xl font-bold text-gray-400 dark:text-gray-400">Data Scientist</span>
+            <span className="text-3xl md:text-4xl font-bold text-gray-400 dark:text-gray-400">Data Science Enthusiast</span>
           </h1>
 
           <p className="text-gray-600 dark:text-gray-400 text-lg mb-6 max-w-lg leading-relaxed">
@@ -125,16 +148,20 @@ const Hero = () => {
           className="relative flex justify-center"
         >
           {/* Profile Hexagon/Aura Frame */}
-          <div className="relative w-64 h-64 md:w-80 md:h-80 group">
+          <div
+            className="relative w-64 h-64 md:w-80 md:h-80 group cursor-pointer"
+            onMouseEnter={() => setIsHeroHovered(true)}
+            onMouseLeave={() => setIsHeroHovered(false)}
+          >
             <div className="absolute inset-0 bg-black dark:bg-demon-red rounded-full blur-2xl opacity-10 dark:opacity-20 group-hover:opacity-20 dark:group-hover:opacity-40 transition-opacity animate-pulse"></div>
             <div className="absolute inset-0 border-2 border-black/30 dark:border-demon-red/30 rounded-full scale-110 animate-[spin_10s_linear_infinite]"></div>
             <div className="absolute inset-0 border border-black/10 dark:border-white/10 rounded-full scale-125 animate-[spin_15s_linear_infinite_reverse]"></div>
 
-            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-black dark:border-demon-charcoal bg-white dark:bg-demon-charcoal/50 backdrop-blur-xl flex items-center justify-center shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-none">
+            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-black dark:border-demon-charcoal bg-white dark:bg-demon-charcoal/50 backdrop-blur-xl flex items-center justify-center shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-none transition-all duration-300">
               <img
-                src="/photos/profile.jpeg"
+                src="/photos/profile1.png"
                 alt="Ashish Garud"
-                className="w-full h-full object-cover grayscale dark:grayscale-0 hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover grayscale dark:grayscale-0 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
               />
             </div>
           </div>
