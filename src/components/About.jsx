@@ -65,14 +65,14 @@ const About = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-5 gap-12 lg:gap-24 items-center">
+        <div className="grid md:grid-cols-1 gap-12 lg:gap-24 items-center">
           {/* Creative Text Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="md:col-span-3 space-y-8 relative"
+            className="space-y-8 relative"
           >
             <div className="absolute -left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-black dark:from-demon-red to-transparent hidden md:block" />
 
@@ -97,37 +97,6 @@ const About = () => {
 
             {/* Red decorative accent */}
             <div className="h-0.5 w-1/4 bg-demon-red opacity-50" />
-          </motion.div>
-
-          {/* Scaled Down Image Column */}
-          <motion.div
-            initial={{ opacity: 0, x: 50, rotate: 5 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="md:col-span-2 relative flex justify-center lg:justify-end"
-          >
-            <div className="w-full max-w-[320px] lg:max-w-sm aspect-[4/5] rounded-none md:rounded-[2rem] overflow-hidden glass-morphism border-black dark:border-demon-red/20 shadow-[20px_20px_0px_[-10px]_rgba(0,0,0,1)] dark:shadow-[0_0_50px_rgba(220,38,38,0.1)] relative group">
-              <img
-                src="/photos/t.png"
-                alt="Professional Portrait Placeholder"
-                className="w-full h-full object-contain grayscale dark:grayscale-0 hover:grayscale-0 hover:scale-110 transition-all duration-1000 ease-in-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-demon-black via-transparent to-transparent opacity-40"></div>
-
-              {/* Image Frame Decorative corners */}
-              <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-black dark:border-demon-red opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-black dark:border-demon-red opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
-
-            {/* Floating text badge */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -left-6 bg-black dark:bg-demon-red text-white p-4 font-black uppercase text-xs tracking-[0.2em] transform -rotate-12 hidden lg:block border-2 border-white dark:border-black"
-            >
-              Insights Driven Growth
-            </motion.div>
           </motion.div>
         </div>
       </div>
