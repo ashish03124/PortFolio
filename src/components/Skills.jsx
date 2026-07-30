@@ -129,7 +129,7 @@ const Skills = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-extrabold text-black dark:text-white uppercase tracking-tighter text-center"
           >
-            Techniques
+            Skills
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -153,57 +153,54 @@ const Skills = () => {
             <motion.div
               key={idx}
               variants={cardVariants}
-              className="relative group rounded-none md:rounded-3xl border-4 border-black dark:border-demon-red/20 overflow-hidden bg-white dark:bg-demon-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-2xl h-[450px] lg:h-[550px] hover:border-demon-red transition-colors duration-300"
+              className="relative group rounded-none md:rounded-3xl border-4 border-black dark:border-demon-red/20 overflow-hidden bg-white dark:bg-demon-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-2xl h-[450px] lg:h-[550px] hover:border-demon-red transition-all duration-300 hover:-translate-y-2"
             >
               {/* Background Character Image */}
-              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105 opacity-20 dark:opacity-30">
                 <img
                   src={category.image}
                   alt={`${category.character} Concept`}
-                  className={`w-full h-full object-cover grayscale dark:grayscale-0 group-hover:grayscale-0 ${category.imageClass || 'object-center'}`}
+                  className={`w-full h-full object-cover grayscale dark:grayscale-0 ${category.imageClass || 'object-center'}`}
                 />
               </div>
 
-              {/* Gradient overlays to ensure text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-demon-black via-white/40 dark:via-demon-black/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100 z-10"></div>
+              {/* Opaque Gradient Overlay for readability */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/85 to-black/95 z-10"></div>
 
-              {/* Dark overlay specifically for the hover state to read skills easily */}
-              <div className="absolute inset-0 bg-black/80 dark:bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-
-              {/* Character/Category info (Default state) */}
-              <div className="absolute bottom-8 left-6 right-6 z-20 transition-all duration-500 group-hover:-translate-y-4 group-hover:opacity-0">
-                <div className="flex flex-col space-y-2">
-                  <div className="text-black dark:text-demon-red [&>svg]:w-8 [&>svg]:h-8 mb-1">
+              {/* Card Content - Always Visible */}
+              <div className="absolute inset-0 p-6 z-20 flex flex-col justify-between">
+                
+                {/* Header: Title and Icon */}
+                <div className="flex flex-col items-center text-center space-y-3 pt-2">
+                  <div className="bg-demon-red/10 border border-demon-red/30 p-3 rounded-2xl text-demon-red shadow-lg [&>svg]:w-7 [&>svg]:h-7">
                     {category.icon}
                   </div>
-                  <h3 className="text-3xl xl:text-4xl font-extrabold text-demon-red uppercase leading-none tracking-tighter drop-shadow-md">
+                  <h3 className="text-2xl xl:text-3xl font-extrabold text-white uppercase tracking-tighter drop-shadow-md">
                     {category.title}
                   </h3>
-                </div>
-              </div>
-
-              {/* Skills info (Hover state) */}
-              <div className="absolute inset-0 p-6 z-30 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-8 group-hover:translate-y-0">
-                <div className="flex flex-col items-center text-center space-y-4 mb-6">
-                  <div className="bg-white dark:bg-demon-red/20 p-3 rounded-xl text-black dark:text-demon-red shadow-lg">
-                    {category.icon}
-                  </div>
-                  <h3 className="text-3xl font-extrabold text-demon-red uppercase tracking-tighter drop-shadow-md">
-                    {category.title}
-                  </h3>
+                  <div className="h-0.5 w-12 bg-demon-red/50"></div>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-2 max-h-[250px] overflow-y-auto no-scrollbar">
+                {/* Body: Skills List */}
+                <div className="flex flex-wrap justify-center gap-2 overflow-y-auto no-scrollbar pb-4 flex-1 items-center mt-4 max-h-[260px]">
                   {category.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="inline-flex items-center px-5 py-2.5 bg-gray-900 border border-gray-700 text-gray-100 text-base md:text-lg font-bold rounded-xl hover:border-demon-red hover:bg-black hover:text-white transition-all cursor-default shadow-md hover:shadow-demon-red/20 shadow-black/50"
+                      className="inline-flex items-center px-4 py-2 bg-gray-900/90 border border-gray-700 text-gray-200 text-sm md:text-base font-bold rounded-xl hover:border-demon-red hover:bg-black hover:text-white transition-all cursor-default shadow-md shadow-black/40"
                     >
                       {getSkillIcon(skill)}
                       {skill}
                     </span>
                   ))}
                 </div>
+
+                {/* Footer: Character Concept Name */}
+                <div className="text-center pt-2">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-black">
+                    Concept: {category.character}
+                  </span>
+                </div>
+
               </div>
 
             </motion.div>

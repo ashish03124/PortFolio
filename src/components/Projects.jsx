@@ -13,10 +13,10 @@ const Projects = () => {
       image: "/photos/p1.png"
     },
     {
-      title: "Real Estate Market Analytics Chatbot",
-      description: "Implemented an AI-driven conversational agent that provides real-time market insights and property valuation trends, helping users navigate complex real estate data through natural language processing.",
-      tech: ["Python", "NLP", "Flask", "ML Models"],
-      github: "https://github.com/ashish03124",
+      title: "Agentic Code Debugger Agents",
+      description: "Created an Agentic Bug Hunter that autonomously invokes MCP Search Tools to gather documentation context, enabling AI-driven bug detection across code samples with self-correcting JSON parsing to handle malformed LLM outputs.",
+      tech: ["Python", "Next.js", "TypeScript", "MCP Protocol", "OpenRouter API"],
+      github: "https://github.com/ashish03124/AgentiBugger",
       demo: "#",
       image: "/photos/p2.png"
     },
@@ -78,7 +78,7 @@ const Projects = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-extrabold text-black dark:text-white uppercase tracking-tighter"
           >
-            Missions
+            Projects
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}

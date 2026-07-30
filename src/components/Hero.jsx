@@ -88,9 +88,9 @@ const Hero = () => {
             <div className="relative bg-black dark:bg-demon-charcoal border-2 border-black dark:border-demon-red/50 py-3 px-5 flex items-center gap-4 overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(185,28,28,1)] group-hover:translate-y-1 group-hover:translate-x-1 group-hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:group-hover:shadow-[4px_4px_0px_0px_rgba(185,28,28,1)] transition-all duration-300">
 
               <div className="flex flex-col border-r-2 border-gray-800 dark:border-demon-red/30 pr-5">
-                <span className="text-gray-500 dark:text-gray-400 text-[9px] font-black tracking-[0.4em] uppercase mb-1 drop-shadow-md">Power Level</span>
+                <span className="text-gray-500 dark:text-gray-400 text-[9px] font-black tracking-[0.4em] uppercase mb-1 drop-shadow-md">CGPA</span>
                 <div className="flex items-baseline gap-1 relative">
-                  <span className="text-3xl font-black text-white dark:text-demon-red group-hover:text-gray-300 dark:group-hover:text-red-500 transition-colors duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">8.50</span>
+                  <span className="text-3xl font-black text-white dark:text-demon-red group-hover:text-gray-300 dark:group-hover:text-red-500 transition-colors duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">8.54</span>
                   <span className="text-xs font-bold text-gray-600">/10</span>
                 </div>
               </div>
@@ -147,13 +147,29 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="relative flex justify-center"
         >
-          {/* Aura Frame (no photo) */}
+          {/* Aura Frame with Profile Picture */}
           <div
-            className="relative w-64 h-64 md:w-80 md:h-80"
+            className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center cursor-pointer"
+            onMouseEnter={() => setIsHeroHovered(true)}
+            onMouseLeave={() => setIsHeroHovered(false)}
           >
-            <div className="absolute inset-0 bg-black dark:bg-demon-red rounded-full blur-2xl opacity-10 dark:opacity-20 animate-pulse"></div>
-            <div className="absolute inset-0 border-2 border-black/30 dark:border-demon-red/30 rounded-full scale-110 animate-[spin_10s_linear_infinite]"></div>
-            <div className="absolute inset-0 border border-black/10 dark:border-white/10 rounded-full scale-125 animate-[spin_15s_linear_infinite_reverse]"></div>
+            {/* Glow Aura */}
+            <div className={`absolute inset-0 bg-black dark:bg-demon-red rounded-full blur-2xl transition-opacity duration-500 ${isHeroHovered ? 'opacity-40 animate-pulse' : 'opacity-10 dark:opacity-20'}`}></div>
+            
+            {/* Outer Spinning Ring 1 */}
+            <div className={`absolute inset-0 border-2 border-black/30 dark:border-demon-red/30 rounded-full scale-110 transition-all duration-500 ${isHeroHovered ? 'border-demon-red dark:border-demon-red/70 animate-[spin_3s_linear_infinite] scale-115' : 'animate-[spin_10s_linear_infinite]'}`}></div>
+            
+            {/* Outer Spinning Ring 2 */}
+            <div className={`absolute inset-0 border border-black/10 dark:border-white/10 rounded-full scale-125 transition-all duration-500 ${isHeroHovered ? 'border-black dark:border-white/30 animate-[spin_4s_linear_infinite_reverse] scale-130' : 'animate-[spin_15s_linear_infinite_reverse]'}`}></div>
+            
+            {/* Circular Profile Picture */}
+            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-black dark:border-demon-red shadow-[0_0_30px_rgba(0,0,0,0.2)] dark:shadow-[0_0_30px_rgba(185,28,28,0.3)] z-10">
+              <img
+                src="/photos/ashishPassportPhoto.jpeg"
+                alt="Ashish Garud"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </div>
           </div>
 
           {/* Sword Slash Graphic Placeholder */}

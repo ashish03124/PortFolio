@@ -26,8 +26,8 @@ const Resume = () => {
           >
             {/* The CV Viewer (Iframe) */}
             <div className="relative w-full h-[600px] md:h-[800px] bg-gray-100 dark:bg-gray-800 rounded-none md:rounded-xl overflow-hidden border-2 border-black dark:border-white/5">
-              <iframe 
-                src="/photos/a.pdf" 
+              <iframe
+                src="/photos/Ashish_Resume.pdf"
                 title="Ashish Garud CV"
                 className="w-full h-full border-none"
               />
@@ -35,7 +35,7 @@ const Resume = () => {
           </motion.div>
 
           <motion.a
-            href="/photos/a.pdf"
+            href="/photos/Ashish_Resume.pdf"
             download="Ashish_Garud_CV.pdf"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

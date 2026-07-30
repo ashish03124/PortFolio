@@ -18,7 +18,7 @@ const Experience = () => {
       school: "Lovely Professional University | Phagwara, Punjab",
       degree: "B.Tech in Computer Science and Engineering",
       duration: "Aug 2023 - Present",
-      desc: "CGPA: 8.5 | Specializing in Data Science & Machine Learning",
+      desc: "CGPA: 8.54 | Specializing in Data Science & Machine Learning",
       icon: <GraduationCap className="w-5 h-5" />
     },
     {
@@ -64,7 +64,7 @@ const Experience = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-extrabold text-black dark:text-white uppercase tracking-tighter text-center"
           >
-            Battle & Training
+            Internship & Education
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -73,7 +73,7 @@ const Experience = () => {
             transition={{ delay: 0.2 }}
             className="text-black dark:text-demon-flame font-black text-sm mt-2 tracking-widest uppercase text-center"
           >
-            Missions & Disciplines
+            Battle & Training
           </motion.p>
         </div>
 

@@ -84,7 +84,7 @@ const Achievements = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-extrabold text-black dark:text-white uppercase tracking-tighter text-center"
           >
-            Mastery & Honor
+            Achievements & Certificates
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -93,7 +93,7 @@ const Achievements = () => {
             transition={{ delay: 0.2 }}
             className="text-black dark:text-demon-flame font-black text-sm mt-2 tracking-widest uppercase text-center"
           >
-            Achievements & Certifications
+            Mastery & Honor
           </motion.p>
         </div>
 
